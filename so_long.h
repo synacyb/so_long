@@ -35,7 +35,20 @@ typedef struct s_map
 	int     rows;
 	int     columns;
 }t_map;
+// Textures!
 
+typedef struct textures
+{
+	void    *wall_img;
+	void    *floor_img;
+	void    *player_img;
+	void    *exit_img;
+	void    *coin_img;
+	int     img_width;
+	int		img_height;
+	void	*mlx;
+	void	*window;
+}t_textur;
 
 int custom_error(char *msg, int exit_code);
 int check_map_name(char *str);

@@ -6,7 +6,7 @@
 /*   By: ayadouay <ayadouay@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/22 16:50:17 by ayadouay          #+#    #+#             */
-/*   Updated: 2025/03/01 11:51:01 by ayadouay         ###   ########.fr       */
+/*   Updated: 2025/03/01 14:53:03 by ayadouay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 int main(int ac, char **av)
 {
 	t_map	map;
+	t_textur	textur;
 
 	if (ac != 2)
 		custom_error("please enter the program name and map", 1);
@@ -22,7 +23,5 @@ int main(int ac, char **av)
 		custom_error("map name is invalid!", 1);
 	if (check_map(av[1], &map) == 0)
 		return (free_matrix(&map), 1);
-	
-	//printf("valid map");
 	
 }
