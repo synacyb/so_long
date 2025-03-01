@@ -6,7 +6,7 @@
 /*   By: ayadouay <ayadouay@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/22 13:32:03 by ayadouay          #+#    #+#             */
-/*   Updated: 2025/02/28 10:27:26 by ayadouay         ###   ########.fr       */
+/*   Updated: 2025/03/01 12:03:02 by ayadouay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,6 @@ int	check_map(char *file_name, t_map *data)
 	if(data->columns == -1)
 		return (perror("map is empty!"), 0);
 	if (check_all_cases(data) == 0)
-		return(0); 
+		return(0);
 	return(1);
 }

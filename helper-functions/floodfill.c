@@ -1,28 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   floodfill.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ayadouay <ayadouay@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/22 16:50:17 by ayadouay          #+#    #+#             */
-/*   Updated: 2025/03/01 11:51:01 by ayadouay         ###   ########.fr       */
+/*   Created: 2025/03/01 08:32:57 by ayadouay          #+#    #+#             */
+/*   Updated: 2025/03/01 09:25:45 by ayadouay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "../so_long.h"
 
-int main(int ac, char **av)
+void    floodfill(char  **tab, int x, int y, t_map *data)
 {
-	t_map	map;
-
-	if (ac != 2)
-		custom_error("please enter the program name and map", 1);
-	if (check_map_name(av[1]) == 0)
-		custom_error("map name is invalid!", 1);
-	if (check_map(av[1], &map) == 0)
-		return (free_matrix(&map), 1);
-	
-	//printf("valid map");
-	
+    if(y < 0 || x < 0 || y >= data->rows || x >= data->columns || tab[y][x] == '1' || tab[y][x] == 'F')
+        return ;
+    tab[y][x] = 'F';
+    floodfill(tab, x + 1, y, data);
+    floodfill(tab, x - 1, y, data);
+    floodfill(tab, x, y + 1, data);
+    floodfill(tab, x, y - 1, data);
 }

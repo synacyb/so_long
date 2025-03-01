@@ -23,6 +23,8 @@ typedef struct s_data
 	int i;
 	int j;
 	char *res;
+	int pos_y;
+	int pos_x;
 }t_sdata;
 
 // strcut for read map
@@ -43,4 +45,7 @@ int 	check_all_cases(t_map *data);
 int 	effective_length(char *str);
 int check_valid_character(t_map *data);
 int validate_map_elements(t_map *data);
+void    floodfill(char  **tab, int x, int y, t_map *data);
+void    get_pos_of_player(char **tab, t_sdata *data);
+int validate_reachability(char **tab);
 #endif
