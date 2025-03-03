@@ -61,4 +61,6 @@ int validate_map_elements(t_map *data);
 void    floodfill(char  **tab, int x, int y, t_map *data);
 void    get_pos_of_player(char **tab, t_sdata *data);
 int validate_reachability(char **tab);
+void    floodfill2(char  **tab, int x, int y, t_map *data);
+int validate_reachability2(char **tab);
 #endif

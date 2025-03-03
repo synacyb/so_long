@@ -6,7 +6,7 @@
 /*   By: ayadouay <ayadouay@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/27 09:26:49 by ayadouay          #+#    #+#             */
-/*   Updated: 2025/03/01 09:47:54 by ayadouay         ###   ########.fr       */
+/*   Updated: 2025/03/03 09:48:57 by ayadouay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,6 +102,6 @@ int check_all_cases(t_map *data)
     floodfill(data->copy_map, info.pos_x, info.pos_y, data);
     if(!validate_reachability(data->copy_map))
         return (perror("the map is not reachable !"), 0);
-        
+    
     return (1);
 }
