@@ -6,7 +6,7 @@
 /*   By: ayadouay <ayadouay@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/22 16:50:17 by ayadouay          #+#    #+#             */
-/*   Updated: 2025/03/03 19:26:27 by ayadouay         ###   ########.fr       */
+/*   Updated: 2025/03/03 21:28:58 by ayadouay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,8 @@ int    init_wind(t_textur  *data, t_map *mdata)
 		perror("Error\n");
 	rendre_map(data, mdata);
 	mlx_loop(data->mlx);
+
+	return 1;
 }
 
 int main(int ac, char **av)
@@ -74,7 +76,6 @@ int main(int ac, char **av)
 		custom_error("map name is invalid!", 1);
 	if (check_map(av[1], &map) == 0)
 		return (free_matrix(&map), 1);
-	
 	if (!init_wind(&textur, &map))
-			return(free_matrix(&map), 1);	
+			return(free_matrix(&map), 1);
 }
