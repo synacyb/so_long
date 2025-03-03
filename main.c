@@ -6,7 +6,7 @@
 /*   By: ayadouay <ayadouay@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/22 16:50:17 by ayadouay          #+#    #+#             */
-/*   Updated: 2025/03/03 11:50:38 by ayadouay         ###   ########.fr       */
+/*   Updated: 2025/03/03 19:26:27 by ayadouay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ int    init_wind(t_textur  *data, t_map *mdata)
 	
     data->wall_img = mlx_xpm_file_to_image(data->mlx, "./texturs/wall.xpm", &data->img_width, &data->img_height);
     data->floor_img = mlx_xpm_file_to_image(data->mlx, "./texturs/floor.xpm", &data->img_width, &data->img_height);
-	data->player_img = mlx_xpm_file_to_image(data->mlx, "./texturs/wplayer1.xpm", &data->img_width, &data->img_height);
+	data->player_img = mlx_xpm_file_to_image(data->mlx, "./texturs/wplayer.xpm", &data->img_width, &data->img_height);
 	data->coin_img = mlx_xpm_file_to_image(data->mlx, "./texturs/coin.xpm", &data->img_width, &data->img_height);
 	data->exit_img = mlx_xpm_file_to_image(data->mlx, "./texturs/door.xpm", &data->img_width, &data->img_height);
 	if (!data->wall_img)
