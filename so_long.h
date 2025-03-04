@@ -46,6 +46,8 @@ typedef struct textures
 	void    *coin_img;
 	int     img_width;
 	int		img_height;
+	int		player_x;
+	int		player_y;
 	void	*mlx;
 	void	*window;
 }t_textur;
