@@ -6,7 +6,7 @@
 /*   By: ayadouay <ayadouay@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/04 09:42:43 by ayadouay          #+#    #+#             */
-/*   Updated: 2025/03/04 22:18:36 by ayadouay         ###   ########.fr       */
+/*   Updated: 2025/03/04 22:34:31 by ayadouay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,10 +29,14 @@ void    check_win(t_map *data)
 }
 void    print_moves(t_map *data)
 {
-    data->moves++;
-    ft_putstr_fd("moves :", 1);
-    ft_putnbr_fd(data->moves, 1);
-    ft_putstr_fd("\n", 1);
+    if(data->map[data->new_y][data->new_x] == '0')
+    {
+        data->moves++;
+        ft_putstr_fd("moves :", 1);
+        ft_putnbr_fd(data->moves, 1);
+        ft_putstr_fd("\n", 1);
+    }
+   
 }
 void    edit_map(int keycode, t_map *data)
 {
