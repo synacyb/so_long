@@ -6,15 +6,28 @@
 /*   By: ayadouay <ayadouay@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/04 09:42:43 by ayadouay          #+#    #+#             */
-/*   Updated: 2025/03/04 12:52:44 by ayadouay         ###   ########.fr       */
+/*   Updated: 2025/03/04 19:34:11 by ayadouay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../so_long.h"
-// void    finish_game(t_map *data)
-// {
-//     if (data->map[data->new_y][data->new_x] != 'E')
-// }
+
+void    finish_game(t_map *data)
+{
+    if (data->map[data->new_y][data->new_x] == 'E')
+    {
+        if (data->check_c == data->c)
+            custom_error("u win", 0);
+        
+    }
+}
+
+void    check_win(t_map *data)
+{
+    if (data->map[data->new_y][data->new_x] == 'C')
+        data->check_c++;
+    finish_game(data);
+}
 int    update_map(int keycode, t_map *data)
 {
     data->new_x = data->pos_x;
@@ -30,8 +43,8 @@ int    update_map(int keycode, t_map *data)
         data->new_x += 1;
     if (keycode == 0xff54 || keycode == 115)
         data->new_y += 1;
-
-    if (data->map[data->new_y][data->new_x] != '1')
+    check_win(data);
+    if (data->map[data->new_y][data->new_x] != '1' && data->map[data->new_y][data->new_x] != 'E')
     {
         data->map[data->pos_y][data->pos_x] = '0';
         data->map[data->new_y][data->new_x] = 'P';

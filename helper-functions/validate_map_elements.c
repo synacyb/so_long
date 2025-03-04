@@ -6,7 +6,7 @@
 /*   By: ayadouay <ayadouay@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/28 09:27:18 by ayadouay          #+#    #+#             */
-/*   Updated: 2025/02/28 10:09:09 by ayadouay         ###   ########.fr       */
+/*   Updated: 2025/03/04 19:34:38 by ayadouay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,8 @@ int validate_map_elements(t_map *data)
         }
         s_data.i++;
     }
+    data->c = v_element.c;
+    data->check_c = 0;
     if(!(v_element.c >= 1 && v_element.p == 1 && v_element.e == 1))
         return 0;
     return 1;
