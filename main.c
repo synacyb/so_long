@@ -6,7 +6,7 @@
 /*   By: ayadouay <ayadouay@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/22 16:50:17 by ayadouay          #+#    #+#             */
-/*   Updated: 2025/03/04 01:23:32 by ayadouay         ###   ########.fr       */
+/*   Updated: 2025/03/04 11:09:18 by ayadouay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,7 @@ int    init_wind(t_textur  *data, t_map *mdata)
 	if (!data->wall_img)
 		perror("Error\n");
 	rendre_map(data, mdata);
+	mlx_key_hook(data->window, update_map, mdata);
 	mlx_loop(data->mlx);
 
 	return 1;
@@ -69,12 +70,15 @@ int main(int ac, char **av)
 	t_map	map;
 	t_textur	textur;
 
+	map.data = &textur;
 	if (ac != 2)
 		custom_error("please enter the program name and map", 1);
 	if (check_map_name(av[1]) == 0)
 		custom_error("map name is invalid!", 1);
 	if (check_map(av[1], &map) == 0)
 		return (free_matrix(&map), 1);
+	// printf("y = %d x = %d", map.pos_y, map.pos_x);
 	if (!init_wind(&textur, &map))
 			return(free_matrix(&map), 1);
+
 }

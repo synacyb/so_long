@@ -27,16 +27,6 @@ typedef struct s_data
 	int pos_x;
 }t_sdata;
 
-// strcut for read map
-typedef struct s_map
-{
-	char    **map;
-	char    **copy_map;
-	int     rows;
-	int     columns;
-}t_map;
-// Textures!
-
 typedef struct textures
 {
 	void    *wall_img;
@@ -52,6 +42,23 @@ typedef struct textures
 	void	*window;
 }t_textur;
 
+// strcut for read map
+typedef struct s_map
+{
+	char    **map;
+	char    **copy_map;
+	int     rows;
+	int     columns;
+	int pos_y;
+	int pos_x;
+	int new_y;
+	int new_x;
+	t_textur *data;
+}t_map;
+// Textures!
+
+
+
 int custom_error(char *msg, int exit_code);
 int check_map_name(char *str);
 int	check_map(char *file_name, t_map *data);
@@ -61,8 +68,8 @@ int 	effective_length(char *str);
 int check_valid_character(t_map *data);
 int validate_map_elements(t_map *data);
 void    floodfill(char  **tab, int x, int y, t_map *data);
-void    get_pos_of_player(char **tab, t_sdata *data);
+void    get_pos_of_player(t_map *mdata, t_sdata *data);
 int validate_reachability(char **tab);
-void    floodfill2(char  **tab, int x, int y, t_map *data);
-int validate_reachability2(char **tab);
+int    update_map(int key, t_map *data);
+void	rendre_map(t_textur *data, t_map *mdata);
 #endif
