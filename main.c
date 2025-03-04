@@ -6,7 +6,7 @@
 /*   By: ayadouay <ayadouay@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/22 16:50:17 by ayadouay          #+#    #+#             */
-/*   Updated: 2025/03/04 19:36:29 by ayadouay         ###   ########.fr       */
+/*   Updated: 2025/03/04 21:59:19 by ayadouay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,6 +77,7 @@ int main(int ac, char **av)
 	t_map	map;
 	t_textur	textur;
 
+	map.moves = 0;
 	map.data = &textur;
 	if (ac != 2)
 		custom_error("please enter the program name and map", 1);

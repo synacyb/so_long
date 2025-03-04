@@ -45,6 +45,7 @@ typedef struct textures
 // strcut for read map
 typedef struct s_map
 {
+	int moves;
 	int  c;
 	int	check_c;
 	char    **map;

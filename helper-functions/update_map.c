@@ -6,7 +6,7 @@
 /*   By: ayadouay <ayadouay@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/04 09:42:43 by ayadouay          #+#    #+#             */
-/*   Updated: 2025/03/04 19:34:11 by ayadouay         ###   ########.fr       */
+/*   Updated: 2025/03/04 22:18:36 by ayadouay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@ void    finish_game(t_map *data)
     {
         if (data->check_c == data->c)
             custom_error("u win", 0);
-        
     }
 }
 
@@ -28,21 +27,32 @@ void    check_win(t_map *data)
         data->check_c++;
     finish_game(data);
 }
+void    print_moves(t_map *data)
+{
+    data->moves++;
+    ft_putstr_fd("moves :", 1);
+    ft_putnbr_fd(data->moves, 1);
+    ft_putstr_fd("\n", 1);
+}
+void    edit_map(int keycode, t_map *data)
+{
+    if (keycode == 65307 ||keycode == 17)
+        exit(0);
+    if (keycode == 0xff51 || keycode == 97)
+        (data->new_x -= 1, print_moves(data));
+        
+    if (keycode == 0xff52 || keycode == 119)
+        (data->new_y -= 1, print_moves(data));
+    if (keycode == 0xff53 || keycode == 100)
+        (data->new_x += 1, print_moves(data));
+    if (keycode == 0xff54 || keycode == 115)
+        (data->new_y += 1, print_moves(data));
+}
 int    update_map(int keycode, t_map *data)
 {
     data->new_x = data->pos_x;
     data->new_y = data->pos_y;
-    
-    if (keycode == 65307 ||keycode == 17)
-        exit(0);
-    if (keycode == 0xff51 || keycode == 97)
-        data->new_x -= 1;
-    if (keycode == 0xff52 || keycode == 119)
-        data->new_y -= 1;
-    if (keycode == 0xff53 || keycode == 100)
-        data->new_x += 1;
-    if (keycode == 0xff54 || keycode == 115)
-        data->new_y += 1;
+    edit_map(keycode, data);
     check_win(data);
     if (data->map[data->new_y][data->new_x] != '1' && data->map[data->new_y][data->new_x] != 'E')
     {
