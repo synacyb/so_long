@@ -6,7 +6,7 @@
 /*   By: ayadouay <ayadouay@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/04 09:42:43 by ayadouay          #+#    #+#             */
-/*   Updated: 2025/03/04 11:32:53 by ayadouay         ###   ########.fr       */
+/*   Updated: 2025/03/04 12:52:44 by ayadouay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@ int    update_map(int keycode, t_map *data)
 {
     data->new_x = data->pos_x;
     data->new_y = data->pos_y;
-
-    if (keycode == 65307)
+    
+    if (keycode == 65307 ||keycode == 17)
         exit(0);
     if (keycode == 0xff51 || keycode == 97)
         data->new_x -= 1;
