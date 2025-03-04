@@ -6,7 +6,7 @@
 /*   By: ayadouay <ayadouay@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/22 16:50:17 by ayadouay          #+#    #+#             */
-/*   Updated: 2025/03/04 01:21:04 by ayadouay         ###   ########.fr       */
+/*   Updated: 2025/03/04 01:23:32 by ayadouay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,6 @@ void	rendre_map(t_textur *data, t_map *mdata)
 				mlx_put_image_to_window(data->mlx, data->window, data->floor_img, var.j * 80, var.i * 80);
 			if (mdata->map[var.i][var.j] == 'P')
 				mlx_put_image_to_window(data->mlx, data->window, data->player_img, var.j * 80, var.i * 80);
-				
 			if (mdata->map[var.i][var.j] == 'E')
 				mlx_put_image_to_window(data->mlx, data->window, data->exit_img, var.j * 80, var.i * 80);
 			if (mdata->map[var.i][var.j] == 'C')
