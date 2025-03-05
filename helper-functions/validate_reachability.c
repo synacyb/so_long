@@ -6,7 +6,7 @@
 /*   By: ayadouay <ayadouay@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/01 09:38:27 by ayadouay          #+#    #+#             */
-/*   Updated: 2025/03/02 19:26:56 by ayadouay         ###   ########.fr       */
+/*   Updated: 2025/03/05 14:14:31 by ayadouay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,13 +17,31 @@ int validate_reachability(char **tab)
     t_sdata data;
 
     data.i = 0;
-    data.len = ft_strlen(tab[0]) - 1;
     while (tab[data.i])
     {
         data.j = 0;
-        while (tab[data.i][data.j] && data.j < data.len)
+        while (tab[data.i][data.j])
         {
-            if(tab[data.i][data.j] != '1' && tab[data.i][data.j] != 'F' && tab[data.i][data.j] != 'E')
+            if(tab[data.i][data.j] == 'C')
+                return (0);
+            data.j++;
+        }
+        data.i++;
+    }
+    return (1);
+}
+
+int validate_reachability2(char **tab)
+{
+    t_sdata data;
+
+    data.i = 0;
+    while (tab[data.i])
+    {
+        data.j = 0;
+        while (tab[data.i][data.j])
+        {
+            if(tab[data.i][data.j] == 'E' || tab[data.i][data.j] == 'C')
                 return (0);
             data.j++;
         }

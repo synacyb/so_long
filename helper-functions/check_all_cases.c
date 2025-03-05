@@ -6,7 +6,7 @@
 /*   By: ayadouay <ayadouay@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/27 09:26:49 by ayadouay          #+#    #+#             */
-/*   Updated: 2025/03/04 10:04:56 by ayadouay         ###   ########.fr       */
+/*   Updated: 2025/03/05 14:36:12 by ayadouay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,6 +101,12 @@ int check_all_cases(t_map *data)
     get_pos_of_player(data, &info);
     floodfill(data->copy_map, info.pos_x, info.pos_y, data);
     if(!validate_reachability(data->copy_map))
-        return (perror("the map is not reachable !"), 0);
+        return (perror("this map is not reachabile!"), 0);
+    free_matrix(data->copy_map);
+    data->copy_map = ft_strcpymap(data->map, data->rows, data->columns);
+    floodfill2(data->copy_map, info.pos_x, info.pos_y, data);
+    printf("%s",data->copy_map[4]);
+    if(!validate_reachability2(data->copy_map))
+        return (perror("this map is not reachabile!"), 0);
     return (1);
 }

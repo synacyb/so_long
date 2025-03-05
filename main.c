@@ -6,7 +6,7 @@
 /*   By: ayadouay <ayadouay@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/22 16:50:17 by ayadouay          #+#    #+#             */
-/*   Updated: 2025/03/04 21:59:19 by ayadouay         ###   ########.fr       */
+/*   Updated: 2025/03/05 13:57:10 by ayadouay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 int close_window(t_map *data)
 {
-    // Clean up and exit the program
     mlx_destroy_window(data->data->mlx, data->data->window);
     exit(0);
 }
@@ -84,8 +83,8 @@ int main(int ac, char **av)
 	if (check_map_name(av[1]) == 0)
 		custom_error("map name is invalid!", 1);
 	if (check_map(av[1], &map) == 0)
-		return (free_matrix(&map), 1);
+		return (free_matrix(map.copy_map), 1);
 	if (!init_wind(&textur, &map))
-			return(free_matrix(&map), 1);
+			return(free_matrix(map.copy_map), 1);
 
 }

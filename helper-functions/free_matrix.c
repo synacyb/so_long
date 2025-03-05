@@ -6,19 +6,21 @@
 /*   By: ayadouay <ayadouay@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/27 10:24:31 by ayadouay          #+#    #+#             */
-/*   Updated: 2025/02/27 14:47:45 by ayadouay         ###   ########.fr       */
+/*   Updated: 2025/03/05 13:51:04 by ayadouay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../so_long.h"
 
-void    free_matrix(t_map *data)
+void	free_matrix(char **map)
 {
-    int i = 0;
-    while (i< data->rows)
-    {
-        free(data->copy_map[i]);
-        i++;
-    }
-    free(data->copy_map);
+	int	i;
+
+	i = 0;
+	while (map[i])
+	{
+		free(map[i]);
+		i++;
+	}
+	free(map);
 }

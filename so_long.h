@@ -65,14 +65,18 @@ typedef struct s_map
 int custom_error(char *msg, int exit_code);
 int check_map_name(char *str);
 int	check_map(char *file_name, t_map *data);
-void    free_matrix(t_map *data);
+void    free_matrix(char **map);
 int 	check_all_cases(t_map *data);
 int 	effective_length(char *str);
 int check_valid_character(t_map *data);
 int validate_map_elements(t_map *data);
 void    floodfill(char  **tab, int x, int y, t_map *data);
+void    floodfill2(char  **tab, int x, int y, t_map *data);
 void    get_pos_of_player(t_map *mdata, t_sdata *data);
 int validate_reachability(char **tab);
+int validate_reachability2(char **tab);
 int    update_map(int key, t_map *data);
 void	rendre_map(t_textur *data, t_map *mdata);
+char **ft_strcpymap(char **map, int lint, int colums);
+
 #endif
