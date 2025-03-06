@@ -6,13 +6,17 @@
 /*   By: ayadouay <ayadouay@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/22 16:50:11 by ayadouay          #+#    #+#             */
-/*   Updated: 2025/03/05 09:57:24 by ayadouay         ###   ########.fr       */
+/*   Updated: 2025/03/06 11:08:51 by ayadouay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../so_long.h"
 
-int	custom_error(char *msg, int exit_code)
+void	set_all_data_and_free(t_map *data)
+{
+}
+
+int	custom_error(char *msg)
 {
 	int	i;
 
@@ -22,5 +26,4 @@ int	custom_error(char *msg, int exit_code)
 		write(1, &msg[i], 1);
 		i++;
 	}
-	exit(exit_code);
 }
