@@ -1,28 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   free_matrix.c                                      :+:      :+:    :+:   */
+/*   set_map.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ayadouay <ayadouay@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/27 10:24:31 by ayadouay          #+#    #+#             */
-/*   Updated: 2025/03/06 12:11:19 by ayadouay         ###   ########.fr       */
+/*   Created: 2025/03/06 11:50:08 by ayadouay          #+#    #+#             */
+/*   Updated: 2025/03/06 12:11:02 by ayadouay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../so_long.h"
 
-void	free_matrix(char **map)
+void	set_map(t_map *data)
 {
-	int	i;
-
-	i = 0;
-	if (!map)
-		return ;
-	while (map[i])
-	{
-		free(map[i]);
-		i++;
-	}
-	free(map);
+	data->map = NULL;
+	data->copy_map = NULL;
 }

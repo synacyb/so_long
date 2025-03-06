@@ -64,6 +64,7 @@ typedef struct s_map
 
 int custom_error(char *msg);
 int check_map_name(char *str);
+void    set_map(t_map *data);
 int	check_map(char *file_name, t_map *data);
 void    free_matrix(char **map);
 int 	check_all_cases(t_map *data);

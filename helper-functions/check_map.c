@@ -6,7 +6,7 @@
 /*   By: ayadouay <ayadouay@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/22 13:32:03 by ayadouay          #+#    #+#             */
-/*   Updated: 2025/03/06 09:46:05 by ayadouay         ###   ########.fr       */
+/*   Updated: 2025/03/06 12:11:35 by ayadouay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,6 +88,12 @@ int	check_map(char *file_name, t_map *data)
 	int	fd;
 
 	fd = open(file_name, O_RDONLY);
+	if (fd == -1)
+	{
+		custom_error("Error\n");
+		custom_error("path is not exist!\n");
+		return (0);
+	}
 	data->rows = count_rows(fd);
 	fd = open(file_name, O_RDONLY);
 	creat_matrix(fd, data);
