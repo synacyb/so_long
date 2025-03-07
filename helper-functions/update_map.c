@@ -6,7 +6,7 @@
 /*   By: ayadouay <ayadouay@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/04 09:42:43 by ayadouay          #+#    #+#             */
-/*   Updated: 2025/03/06 11:20:45 by ayadouay         ###   ########.fr       */
+/*   Updated: 2025/03/07 21:52:45 by ayadouay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ void	finish_game(t_map *data)
 		if (data->check_c == data->c)
 		{
 			custom_error("u win");
+			close_window(data);
 			exit(0);
 		}
 	}
@@ -56,7 +57,7 @@ void	print_moves(t_map *data)
 void	edit_map(int keycode, t_map *data)
 {
 	if (keycode == 65307 || keycode == 17)
-		exit(0);
+		close_window(data);
 	if (keycode == 0xff51 || keycode == 97)
 	{
 		data->new_x -= 1;

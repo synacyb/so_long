@@ -80,5 +80,6 @@ int validate_reachability2(char **tab, int rows, int colums);
 int    update_map(int key, t_map *data);
 void	rendre_map(t_textur *data, t_map *mdata);
 char **ft_strcpymap(char **map, int lint, int colums);
+int close_window(t_map *data);
 
 #endif

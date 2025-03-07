@@ -6,7 +6,7 @@
 /*   By: ayadouay <ayadouay@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/22 13:32:03 by ayadouay          #+#    #+#             */
-/*   Updated: 2025/03/06 12:11:35 by ayadouay         ###   ########.fr       */
+/*   Updated: 2025/03/07 22:13:57 by ayadouay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,6 +80,7 @@ char	**ft_strcpymap(char **map, int length, int colums)
 		cpymap[i] = ft_strcpy(map[i]);
 		i++;
 	}
+	cpymap[i] = NULL;
 	return (cpymap);
 }
 
