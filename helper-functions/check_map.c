@@ -6,7 +6,7 @@
 /*   By: ayadouay <ayadouay@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/22 13:32:03 by ayadouay          #+#    #+#             */
-/*   Updated: 2025/03/08 07:08:57 by ayadouay         ###   ########.fr       */
+/*   Updated: 2025/03/08 10:30:03 by ayadouay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,11 +67,10 @@ char	*ft_strcpy(char *s1)
 	return (s2);
 }
 
-char	**ft_strcpymap(char **map, int length, int colums)
+char	**ft_strcpymap(char **map, int length)
 {
 	char	**cpymap;
 	int		i;
-	int		j;
 
 	cpymap = malloc(sizeof(char *) * (length + 1));
 	i = 0;
@@ -97,7 +96,7 @@ int	check_map(char *file_name, t_map *data)
 	data->rows = count_rows(fd);
 	fd = open(file_name, O_RDONLY);
 	creat_matrix(fd, data);
-	data->map = ft_strcpymap(data->copy_map, data->rows, data->columns);
+	data->map = ft_strcpymap(data->copy_map, data->rows);
 	data->columns = ft_strlen(data->copy_map[0]) - 1;
 	if (data->columns == -1)
 		return (custom_error("map is empty!"), 0);

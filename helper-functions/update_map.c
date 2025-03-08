@@ -6,7 +6,7 @@
 /*   By: ayadouay <ayadouay@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/04 09:42:43 by ayadouay          #+#    #+#             */
-/*   Updated: 2025/03/07 21:52:45 by ayadouay         ###   ########.fr       */
+/*   Updated: 2025/03/08 10:44:16 by ayadouay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	finish_game(t_map *data)
 	{
 		if (data->check_c == data->c)
 		{
-			custom_error("u win");
+			ft_putstr_fd("You win!\n", 1);
 			close_window(data);
 			exit(0);
 		}
@@ -93,7 +93,7 @@ int	update_map(int keycode, t_map *data)
 		data->map[data->new_y][data->new_x] = 'P';
 		data->pos_x = data->new_x;
 		data->pos_y = data->new_y;
-		rendre_map(data->data, data);
+		rendre_map(data);
 	}
 	return (0);
 }

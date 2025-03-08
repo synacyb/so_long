@@ -6,7 +6,7 @@
 /*   By: ayadouay <ayadouay@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/27 09:26:49 by ayadouay          #+#    #+#             */
-/*   Updated: 2025/03/08 07:01:56 by ayadouay         ###   ########.fr       */
+/*   Updated: 2025/03/08 10:42:23 by ayadouay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,7 @@ int	check_valid_character(t_map *data)
 		{
 			c = data->copy_map[s_data.i][s_data.j];
 			if (c != '0' && c != '1' && c != 'C' && c != 'E' && c != 'P')
-				return (0);
+				return (custom_error("invalid character in the map\n"), 0);
 			s_data.j++;
 		}
 		s_data.i++;
@@ -85,13 +85,13 @@ int	check_all_cases(t_map *data)
 	if (!is_closed_by_walls(data))
 		return (custom_error("Error this walls!"), 0);
 	if (!check_valid_character(data))
-		return (custom_error("invalid character in the map\n"), 0);
+		return (0);
 	get_pos_of_player(data, &info);
 	floodfill(data->copy_map, info.pos_x, info.pos_y, data);
 	if (!validate_reachability(data->copy_map, data->rows, data->columns))
 		return (custom_error("this map is not reachabile!"), 0);
 	free_matrix(data->copy_map);
-	data->copy_map = ft_strcpymap(data->map, data->rows, data->columns);
+	data->copy_map = ft_strcpymap(data->map, data->rows);
 	floodfill2(data->copy_map, info.pos_x, info.pos_y, data);
 	if (!validate_reachability2(data->copy_map, data->rows, data->columns))
 		return (custom_error("this map is not reachabile!"), 0);
