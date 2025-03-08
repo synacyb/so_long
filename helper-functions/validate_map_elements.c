@@ -6,7 +6,7 @@
 /*   By: ayadouay <ayadouay@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/28 09:27:18 by ayadouay          #+#    #+#             */
-/*   Updated: 2025/03/06 11:24:43 by ayadouay         ###   ########.fr       */
+/*   Updated: 2025/03/08 07:15:16 by ayadouay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,6 @@ int	validate_map_elements(t_map *data)
 	data->c = v_element.c;
 	data->check_c = 0;
 	if (!(v_element.c >= 1 && v_element.p == 1 && v_element.e == 1))
-		return (0);
+		return (custom_error("Map must have 1 E, 1 P,and at least 1 C\n"), 0);
 	return (1);
 }

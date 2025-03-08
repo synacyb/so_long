@@ -6,7 +6,7 @@
 /*   By: ayadouay <ayadouay@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/22 13:32:03 by ayadouay          #+#    #+#             */
-/*   Updated: 2025/03/07 22:13:57 by ayadouay         ###   ########.fr       */
+/*   Updated: 2025/03/08 07:08:57 by ayadouay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,7 +91,6 @@ int	check_map(char *file_name, t_map *data)
 	fd = open(file_name, O_RDONLY);
 	if (fd == -1)
 	{
-		custom_error("Error\n");
 		custom_error("path is not exist!\n");
 		return (0);
 	}
@@ -101,7 +100,7 @@ int	check_map(char *file_name, t_map *data)
 	data->map = ft_strcpymap(data->copy_map, data->rows, data->columns);
 	data->columns = ft_strlen(data->copy_map[0]) - 1;
 	if (data->columns == -1)
-		return (perror("map is empty!"), 0);
+		return (custom_error("map is empty!"), 0);
 	if (check_all_cases(data) == 0)
 		return (0);
 	return (1);

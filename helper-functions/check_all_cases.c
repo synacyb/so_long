@@ -6,7 +6,7 @@
 /*   By: ayadouay <ayadouay@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/27 09:26:49 by ayadouay          #+#    #+#             */
-/*   Updated: 2025/03/06 10:21:31 by ayadouay         ###   ########.fr       */
+/*   Updated: 2025/03/08 07:01:56 by ayadouay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,7 +85,7 @@ int	check_all_cases(t_map *data)
 	if (!is_closed_by_walls(data))
 		return (custom_error("Error this walls!"), 0);
 	if (!check_valid_character(data))
-		return (custom_error("invalid character in the map"), 0);
+		return (custom_error("invalid character in the map\n"), 0);
 	get_pos_of_player(data, &info);
 	floodfill(data->copy_map, info.pos_x, info.pos_y, data);
 	if (!validate_reachability(data->copy_map, data->rows, data->columns))
